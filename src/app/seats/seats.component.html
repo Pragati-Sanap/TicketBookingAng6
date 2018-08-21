@@ -1,0 +1,183 @@
+<div class="container-fluid seats-container">
+  <div class="row">
+      <div class="col-md-10 offset-md-1">
+          <div class="card shadow-sm">
+              <div class="card-header">
+                  <span class="heading">Select your seats</span>
+
+                  <span>
+                      <form #dateForm="ngForm" name="dateForm" class="float-right">
+                          <label class="label">DATE </label>
+                          <input type="date" name="date" [(ngModel)]="UserData.eventDate" (ngModelChange)="changedate(UserData.eventDate)" 
+                            min="{{date | date:'yyyy-MM-dd'}}" required>
+
+                          <!-- {{UserData.eventDate}} -->
+
+                      </form>
+
+                  </span>
+
+
+                  <select [(ngModel)]="selectedOption" name="first" (ngModelChange)="setvalue()" class="float-right">
+                      <option *ngFor="let o of options">
+                          {{o.name}}
+                      </option>
+                  </select>
+                  <!-- <p>Selected option: {{ selectedOption }}</p> -->
+
+              </div>
+              <div class="card-body">
+                  <!-- Seats container -->
+
+                  <div style="width:100%;">
+                      <div class="d-flex flex-row mb-3 seats">
+                          <div class="mr-2 seat-row">A</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="A1" (click)="onSelect($event)">1</div>
+                          <div class=" seat" id="A2" (click)="onSelect($event)">2</div>
+                          <div class=" seat" id="A3" (click)="onSelect($event)">3</div>
+                          <div class=" seat" id="A4" (click)="onSelect($event)">4</div>
+                          <div class=" seat" id="A5" (click)="onSelect($event)">5</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="A6" (click)="onSelect($event)">6</div>
+                          <div class=" seat" id="A7" (click)="onSelect($event)">7</div>
+                          <div class=" seat" id="A8" (click)="onSelect($event)">8</div>
+                          <div class=" seat" id="A9" (click)="onSelect($event)">9</div>
+                          <div class=" seat" id="A10" (click)="onSelect($event)">10</div>
+
+                      </div>
+
+                      <div class="d-flex flex-row mb-3 seats">
+                          <div class="mr-2 seat-row">B</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="B1" (click)="onSelect($event)">1</div>
+                          <div class=" seat" id="B2" (click)="onSelect($event)">2</div>
+                          <div class=" seat" id="B3" (click)="onSelect($event)">3</div>
+                          <div class=" seat" id="B4" (click)="onSelect($event)">4</div>
+                          <div class=" seat" id="B5" (click)="onSelect($event)">5</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="B6" (click)="onSelect($event)">6</div>
+                          <div class=" seat" id="B7" (click)="onSelect($event)">7</div>
+                          <div class=" seat" id="B8" (click)="onSelect($event)">8</div>
+                          <div class=" seat" id="B9" (click)="onSelect($event)">9</div>
+                          <div class=" seat" id="B10" (click)="onSelect($event)">10</div>
+                      </div>
+
+                      <div class="d-flex flex-row mb-3 seats">
+                          <div class="mr-2 seat-row">C</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="C1" (click)="onSelect($event)">1</div>
+                          <div class=" seat" id="C2" (click)="onSelect($event)">2</div>
+                          <div class=" seat" id="C3" (click)="onSelect($event)">3</div>
+                          <div class=" seat" id="C4" (click)="onSelect($event)">4</div>
+                          <div class=" seat" id="C5" (click)="onSelect($event)">5</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="C6" (click)="onSelect($event)">6</div>
+                          <div class=" seat" id="C7" (click)="onSelect($event)">7</div>
+                          <div class=" seat" id="C8" (click)="onSelect($event)">8</div>
+                          <div class=" seat" id="C9" (click)="onSelect($event)">9</div>
+                          <div class=" seat" id="C10" (click)="onSelect($event)">10</div>
+                      </div>
+
+                      <div class="d-flex flex-row mb-3 seats">
+                          <div class="mr-2 seat-row">D</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="D1" (click)="onSelect($event)">1</div>
+                          <div class=" seat" id="D2" (click)="onSelect($event)">2</div>
+                          <div class=" seat" id="D3" (click)="onSelect($event)">3</div>
+                          <div class=" seat" id="D4" (click)="onSelect($event)">4</div>
+                          <div class=" seat" id="D5" (click)="onSelect($event)">5</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="D6" (click)="onSelect($event)">6</div>
+                          <div class=" seat" id="D7" (click)="onSelect($event)">7</div>
+                          <div class=" seat" id="D8" (click)="onSelect($event)">8</div>
+                          <div class=" seat" id="D9" (click)="onSelect($event)">9</div>
+                          <div class=" seat" id="D10" (click)="onSelect($event)">10</div>
+                      </div>
+
+                      <div class="d-flex flex-row mb-3 seats">
+                          <div class="mr-2 seat-row">E</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="E1" (click)="onSelect($event)">1</div>
+                          <div class=" seat" id="E2" (click)="onSelect($event)">2</div>
+                          <div class=" seat" id="E3" (click)="onSelect($event)">3</div>
+                          <div class=" seat" id="E4" (click)="onSelect($event)">4</div>
+                          <div class=" seat" id="E5" (click)="onSelect($event)">5</div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class="mr-4  seat-divider"> </div>
+                          <div class=" seat" id="E6" (click)="onSelect($event)">6</div>
+                          <div class=" seat" id="E7" (click)="onSelect($event)">7</div>
+                          <div class=" seat" id="E8" (click)="onSelect($event)">8</div>
+                          <div class=" seat" id="E9" (click)="onSelect($event)">9</div>
+                          <div class=" seat" id="E10" (click)="onSelect($event)">10</div>
+                      </div>
+
+                  </div>
+                  <!-- Seats container ends here-->
+
+                  <!-- Confirmation Box - Show this box after Selecting valid no of seats only -->
+                  <div class="text-center my-5">
+                      <img src="assets/images/screen.png">
+                      <br/>
+                      <span class="text-muted small">All eyes this way please!</span>
+                  </div>
+                  <div class="row m-2">
+                      <div class="col-md-12 p-0">
+                          <div class="alert alert-danger" role="alert">
+                              <i class="fa ">Selected seats:</i>
+                              <div *ngFor="let d of DisplayValue">{{d}}</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div *ngIf="count==0" class="row payment-holder m-2">
+                      <div class="col-md-4 p-3">
+                          <form #registerForm="ngForm" name="registerForm">
+                              <div class="form-group">
+                                  <label>Name</label>
+                                  <input type="text" [(ngModel)]="UserData.name" name="name" class="form-control" required>{{name}}
+                              </div>
+                              <div class="form-group">
+                                  <label>Email</label>
+                                  <input type="email" [(ngModel)]="UserData.email" name="email" class="form-control" required>{{email}}
+                              </div>
+                          </form>
+                      </div>
+                      <div class="col-md-8 p-3">
+                          <div class="mt-5">
+                              <h5 class="text-center">Your Seats Selection:
+                                  <h3 *ngFor="let x of DisplayValue">
+                                      <span class="badge badge-secondary mr-2">{{x}}</span>
+                                  </h3>
+                              </h5>
+                              <div class="row mt-3">
+                                  <div class="col-sm-6 offset-sm-3 text-center">
+                                      <button class="btn btn-primary btn-lg btn-block" [disabled]="registerForm.form.invalid||dateForm.form.invalid" (click)="saveTicketDetails(user)">Pay
+                                          <i class="fa fa-rupee-sign"></i> {{UserData.price}}</button>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+
+                  </div>
+                  <!-- Confirmation box ends here-->
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

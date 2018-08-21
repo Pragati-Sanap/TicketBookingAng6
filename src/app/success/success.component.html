@@ -1,0 +1,33 @@
+
+    <!-- Contents -->
+    <div class="container-fluid seats-container p-5" ng-init="getUser()">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <div class="card shadow-lg">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12 text-center">
+                                  <i class="far fa-check-circle fa-7x text-success"></i>
+                                  <br/>
+                                  <h6 ><b>Ticket ID</b>:-{{ticketId}}</h6>
+                                  <h3 class="text-dark my-5">Hi {{UserData.name}}, your tickets has been confirmed successfully.</h3>
+                                  <h5 class="text-center">Confirmed Seats:
+                                      <h1 *ngFor="let x of UserData.seats"><span class="badge badge-warning mr-2">{{x}}</span></h1>
+                                   </h5>
+                                      <p class="text-muted">Your will receive tickets confirmation to {{UserData.email}} mailbox. </p>
+                                  <div>
+                                      <p>book more tickets</p>
+                                      <!-- <button  ui-sref="home">Get Tickets</button> -->
+                                      <a  class="btn btn-primary"  routerLink="/home" routerLinkActive="active">Get Tickets</a>
+                                  </div>
+                                  </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+  </div>
+  <!-- Contents ends-->
