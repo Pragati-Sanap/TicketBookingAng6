@@ -53,7 +53,7 @@ export class PaymentComponent implements OnInit {
             if (this.num1 > this.num2) {
                 this.cond = false;
                 this.actAnswer = this.operators[this.selectedOperator].method(this.num1, this.num2)
-                // console.log(this.actAnswer);
+                console.log(this.actAnswer);
                 return this.num1, this.num1, this.opr, this.actAnswer;
             };
         }
@@ -67,6 +67,9 @@ export class PaymentComponent implements OnInit {
         console.log(this.UserData);
     }
     isSuccess(answer) {
+        // console.log("user"+answer);
+        // console.log("user"+this.actAnswer);
+         console.log(this.actAnswer == answer);
         if (this.actAnswer == answer) {
             console.log("payment success");
 
@@ -74,6 +77,7 @@ export class PaymentComponent implements OnInit {
                 .subscribe(res => {
                     this.userresponse = res;
                     console.log(this.userresponse.doc.status);
+                    console.log(this.userresponse.doc);
                     this.ticket.setStatus(this.userresponse.doc.status);
                     this.getVar();
                     console.log("status on submit  " + this.userresponse.doc.status);
@@ -86,12 +90,14 @@ export class PaymentComponent implements OnInit {
                             .pipe(map(res => { this.userresponse = res; return res; }))
                             .subscribe(res => {
                                 let id = this.UserData.ticketId;
-                                console.log(this.userresponse.docs.status);
+                                console.log(res);
+                                this.userresponse=res;
+                                 console.log(this.userresponse.docs.status);
                                 // let status=this.userresponse.docs.status;
-                                if (this.userresponse.doc.status == 'completed') {
+                                if (this.userresponse.docs.status == 'completed') {
                                     this.updateData();
                                     this.router.navigate(['/success', this.UserData.ticketId], { relativeTo: this.route });
-                                } else if (this.userresponse.doc.status == 'failed') {
+                                } else if (this.userresponse.docs.status == 'failed') {
                                     alert('your time is done..!!!......try again...')
                                     this.router.navigate(['/failed'], { relativeTo: this.route });
                                 }
